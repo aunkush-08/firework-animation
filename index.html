@@ -1,0 +1,79 @@
+<div class="fireworks-container">
+  <!-- Firework Elements -->
+  <div class="firework"></div>
+  <div class="firework"></div>
+  <div class="firework"></div>
+  <div class="firework"></div>
+  <div class="firework"></div>
+</div>
+
+<style>
+  /* Fireworks container */
+  .fireworks-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* Ensures it is behind all other content */
+    background: transparent;
+  }
+
+  /* Individual fireworks */
+  .firework {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    animation: explode 2s ease-in-out infinite;
+  }
+
+  /* Fireworks positions and timing */
+  .firework:nth-of-type(1) {
+    top: 20%;
+    left: 30%;
+    animation-delay: 0s;
+  }
+  .firework:nth-of-type(2) {
+    top: 40%;
+    left: 60%;
+    animation-delay: 0.5s;
+  }
+  .firework:nth-of-type(3) {
+    top: 50%;
+    left: 40%;
+    animation-delay: 1s;
+  }
+  .firework:nth-of-type(4) {
+    top: 70%;
+    left: 20%;
+    animation-delay: 1.5s;
+  }
+  .firework:nth-of-type(5) {
+    top: 30%;
+    left: 80%;
+    animation-delay: 2s;
+  }
+
+  /* Fireworks animation */
+  @keyframes explode {
+    0% {
+      transform: scale(0);
+      opacity: 1;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    }
+    50% {
+      transform: scale(2);
+      opacity: 0.8;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 1);
+    }
+    100% {
+      transform: scale(4);
+      opacity: 0;
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0);
+    }
+  }
+</style>
